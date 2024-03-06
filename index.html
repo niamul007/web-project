@@ -1,46 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>first-page</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
     <main>
-        <div class="navbar">
-            <img src="nurui.svg" alt="" srcset="" class="logo-img">
-            <div class="nav-item">
-                <a href="" class="nav-op">Features</a>
-                <a href="" class="nav-op">Style Guide</a>
-                <a href="" class="nav-op">Membership</a>
-                <a href="" class="nav-op">Get Theme</a>
-                <button class="sign-op">Sign in</button>
-                <button class="sign-op op-up">Sign up</button>
-                <a href="" class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></a>
-                <a href="" class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></a>
-                <div class="menubar-1000px">
-                    <ul>
-                        <li class="nav-link">Features</li>
-                        <li class="nav-link">Style Guide</li>
-                        <li class="nav-link">Membership</li>
-                        <li class="nav-link">Get Theme</li>
-                        <li class="nav-link">Newsletter</li>
-                        <li class="nav-link">Authors</li>
-                        <li class="nav-link">Tags</li>
-                        <li class="nav-link">Contact</li>
-                        <li class="nav-link">Demos</li>
-                        <li class="nav-link">Sign in</li>
-                        <li class="nav-link">Sign up</li>
-                    </ul>
-
-                    <h3 class="search-bar">SEARCH <i class="fa fa-search" aria-hidden="true"></i></h3>
-                </div>
-            </div>
-
+      <div class="navbar">
+        <img src="nurui.svg" alt="" srcset="" class="logo-img" />
+        <div class="nav-item">
+          <a href="" class="nav-op">Features</a>
+          <a href="" class="nav-op">Style Guide</a>
+          <a href="" class="nav-op">Membership</a>
+          <a href="" class="nav-op">Get Theme</a>
+          <button class="sign-op">Sign in</button>
+          <button class="sign-op op-up">Sign up</button>
+          <a href="" class="search-icon"
+            ><i class="fa fa-search" aria-hidden="true"></i
+          ></a>
+          <a href="#" class="menu-icon" id="bar"
+            ><i class="fa fa-bars" aria-hidden="true"></i
+          ></a>
+          <a href="#" class="menu-icon-mt" id="mt"
+            ><i class="fa fa-times" aria-hidden="true"></i
+          ></a>
+          <div class="menubar-1000px" id="menu">
+            <ul>
+              <li class="nav-link">Features</li>
+              <li class="nav-link">Style Guide</li>
+              <li class="nav-link">Membership</li>
+              <li class="nav-link">Get Theme</li>
+              <li class="nav-link">Newsletter</li>
+              <li class="nav-link">Authors</li>
+              <li class="nav-link">Tags</li>
+              <li class="nav-link">Contact</li>
+              <li class="nav-link">Demos</li>
+              <li class="nav-link in">Sign in</li>
+              <li class="nav-link up">Sign up</li>
+              <li class="search-bar">
+                SEARCH <i class="fa fa-search" aria-hidden="true"></i>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
+      <div class="sliderimg">
+        <img src="" alt="" class="img" />
+      </div>
     </main>
-</body>
+    <script>
+      let menu = document.querySelector(".menu-icon");
+      menu.addEventListener("click", () => {
+        let hideDiv = document.querySelector(".menubar-1000px");
+        let mt = document.querySelector(".menu-icon-mt");
+        hideDiv.style.display = "flex";
+        menu.style.display = "none";
+        mt.style.display = "block";
+      });
+      let mt = document.querySelector(".menu-icon-mt");
+      mt.addEventListener("click", () => {
+        let hideDiv = document.querySelector(".menubar-1000px");
+        hideDiv.style.display = "none";
+        menu.style.display = "flex";
+        mt.style.display = "none";
+      });
+      console.log("here ");
+      function showSlides() {
+        const slides = document.querySelectorAll(".sliderimg");
+        if (slideIndex >= slides.length) {
+          slideIndex = 0;
+        } else if (slideIndex < 0) {
+          slideIndex = slides.length - 1;
+        }
+        slides.forEach((slide) => (slide.style.display = "none"));
+        slides[slideIndex].style.display = "block";
+      }
+      function nextSlide() {
+        slideIndex++;
+        showSlides();
+    </script>
+  </body>
 </html>
